@@ -11,7 +11,8 @@ class Hornedbeasts extends React.Component {
                 <h2> {this.props.title}</h2>
                 <p>{this.props.par} </p>
                 <h4 >{this.props.num}</h4>
-                <img src={this.props.Imgurl} alt={this.props.title}/>
+                <img style={{
+                     width: "18rem", height: "18rem" }} src={this.props.Imgurl} alt={this.props.title}/>
 
             </div>
         );
