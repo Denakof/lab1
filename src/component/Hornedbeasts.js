@@ -19,28 +19,33 @@ class Hornedbeasts extends React.Component {
         })
 
     }
+
+    Selecting = () => {
+        this.props.selectfun(<Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={this.props.Imgurl} />
+            <Card.Body>
+                <Card.Title>{this.props.title}</Card.Title>
+                <Card.Text>
+                    {this.props.par}    </Card.Text>
+                <Card.Text style={{ textAlign: "center" }}>{this.state.likes} 💜
+                </Card.Text>
+                <Button onClick={this.voting} variant="outline-warning">Like</Button>
+            </Card.Body>
+        </Card>)
+    }
     render() {
 
 
         return (
 
-            // <div>
-            //     <h2> {this.props.title}</h2>
-            //     <p>{this.props.par} </p>
-            //     <h4 >{this.props.num}</h4>
-            //     <img style={{
-            //         width: "18rem", height: "18rem"
-            //     }} src={this.props.Imgurl} alt={this.props.title} />
 
-
-            // </div>
-            <Card style={{ width: '18rem' }}>
+            <Card onClick={this.Selecting} style={{ width: '18rem', display: 'inline-block' }}>
                 <Card.Img variant="top" src={this.props.Imgurl} />
                 <Card.Body>
-                    <Card.Title>{this.props.title}</Card.Title>
+                    <Card.Title >{this.props.title}</Card.Title>
                     <Card.Text>
                         {this.props.par}    </Card.Text>
-                    <Card.Text style={{ textAlign: "center" }}>{this.state.likes} 💜
+                    <Card.Text style={{ textAlign: 'center' }}>{this.state.likes} 💜
                     </Card.Text>
                     <Button onClick={this.voting} variant="outline-warning">Like</Button>
                 </Card.Body>
@@ -49,6 +54,5 @@ class Hornedbeasts extends React.Component {
     }
 
 }
-
 
 export default Hornedbeasts;
