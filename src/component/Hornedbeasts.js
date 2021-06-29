@@ -14,6 +14,7 @@ class Hornedbeasts extends React.Component {
                 <img style={{
                      width: "18rem", height: "18rem" }} src={this.props.Imgurl} alt={this.props.title}/>
 
+
             </div>
         );
     }
