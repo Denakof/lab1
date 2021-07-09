@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SelectedBeast extends Component {
+class SelectedBeast extends React.Component {
     render() {
         return (
             <div>
