@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import SelectedBeast from './SelectedBeast';
 class Hornedbeasts extends React.Component {
 
     constructor(props) {
@@ -21,25 +22,15 @@ class Hornedbeasts extends React.Component {
     }
 
     Selecting = () => {
-        this.props.selectfun(<Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={this.props.Imgurl} />
-            <Card.Body>
-                <Card.Title>{this.props.title}</Card.Title>
-                <Card.Text>
-                    {this.props.par}    </Card.Text>
-                <Card.Text style={{ textAlign: "center" }}>{this.state.likes} 💜
-                </Card.Text>
-                <Button onClick={this.voting} variant="outline-warning">Like</Button>
-            </Card.Body>
-        </Card>)
+        this.props.selectfun(this.props.title,this.props.par,this.props.num,this.props.Imgurl)
     }
     render() {
 
 
         return (
 
-
-            <Card onClick={this.Selecting} style={{ width: '18rem', display: 'inline-block' }}>
+<>
+            <Card  onClick={this.Selecting} style={{ width: '18rem', display: 'inline-block' }}>
                 <Card.Img variant="top" src={this.props.Imgurl} />
                 <Card.Body>
                     <Card.Title >{this.props.title}</Card.Title>
@@ -50,6 +41,8 @@ class Hornedbeasts extends React.Component {
                     <Button onClick={this.voting} variant="outline-warning">Like</Button>
                 </Card.Body>
             </Card>
+            {/* <SelectedBeast show={this.state.show} handleClose={this.props.handleClose} title={this.props.title} par={this.props.par} Imgurl={this.props.imgUrl} /> */}
+            </>
         );
     }
 
